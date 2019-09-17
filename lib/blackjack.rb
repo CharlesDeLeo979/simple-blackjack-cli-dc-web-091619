@@ -31,6 +31,10 @@ def initial_round
   sum
 end
 
+def invalid_command
+  puts "Please enter a valid command"
+end
+
 def hit?(current_card_total)
   prompt_user
   total = get_user_input
@@ -45,9 +49,7 @@ def hit?(current_card_total)
   end
 end
 
-def invalid_command
-  puts "Please enter a valid command"
-end
+
 
 #####################################################
 # get every test to pass before coding runner below #
