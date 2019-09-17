@@ -1,3 +1,4 @@
+require 'pry'
 def welcome
   puts "Welcome to the Blackjack Table"
 end
@@ -31,12 +32,16 @@ def initial_round
 end
 
 def hit?(current_card_total)
-  prompt_user 
-  if get_user_input == "h"
+  prompt_user
+  total = get_user_input
+  if total == "h"
     current_card_total += deal_card
-  else "Please enter a valid command"
+    elsif total == "s"
+    current_card_total
+  else 
+    invalid_command
+    prompt_user
   end
-  current_card_total
 end
 
 def invalid_command
